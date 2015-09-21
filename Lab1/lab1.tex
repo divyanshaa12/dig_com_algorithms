@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[outdir=./]{epstopdf}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\DeclareGraphicsExtensions{.jpg,.eps}
+\topmargin=-1in
+\evensidemargin=0in
+\oddsidemargin=-0.5in
+\textwidth=7.5in
+\textheight=10.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+ 
+\begin{document}
+
+\title{\vspace{-0.5in}ECEN455 Lab1}
+\author{Divyansha Pandey \\ UIN : 623007531}
+\date{}
+\maketitle
+\rule{\textwidth}{1pt}
+\vspace{10pt}\\
+\textbf{\underline{\LARGE{Task 1}}} \\
+
+Input Signal: $0.5*sin(2\pi(1000)t)$ + $0.5*cos(2\pi(2000)t)$\\
+Sampling Rate: 10 kHz
+\vspace{10pt}\\ 
+\centerline{\includegraphics[scale = 1]{./Task1.eps}}\\
+\newpage
+Matlab code:
+\lstinputlisting{task1.m}
+CTFT.m:
+\lstinputlisting{CTFT.m}
+\newpage
+
+\textbf{\underline{\LARGE{Task 2}}} \\
+
+Following is the time and frequency domain plot of the raw recording.\\
+\vspace{10pt}\\ 
+\centerline{\includegraphics[scale = 1]{./Task2_original.eps}}\\
+\vspace{10pt}\\ 
+
+The frequency domain plot shows that for frequencies greater than 2500 Hz have very low energy and most of the information is present within 2500 Hz.\\
+
+Downsampling the recording by a factor of 2 removes the high frequency components(i.e. $>6kHz$) and we get a zoomed version of the frequency domain.\\
+The downsampling(by 2) has no significant impact on the voice recording.\\
+
+This plot shows the downsampled time and frequency domain of the signal:\\ 
+\vspace{10pt}\\ 
+\centerline{\includegraphics[scale = 1]{./Task2_DS2.eps}}\\
+\vspace{10pt}\\ 
+
+While downsampling by 8 we loose information in the frequencies $>1.5kHz$ and we get a further zoomed version of the frequency domain. \\
+This (downsampling by 8) has noticable impact on the recording however, the recording is still perceivable.\\
+\newpage
+The plot shows the downsampled by 8 time and frequency domain of the signal: \\
+\vspace{10pt}\\ 
+\centerline{\includegraphics[scale = 1]{./Task2_DS8.eps}}\\
+\vspace{10pt}\\
+Matlab code:
+\lstinputlisting{task2.m}
+
+\end{document}

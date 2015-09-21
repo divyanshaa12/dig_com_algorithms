@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[outdir=./]{epstopdf} 
+\DeclareGraphicsExtensions{.jpg,.eps}
+\topmargin=-1.5in
+\evensidemargin=0in
+\oddsidemargin=-0.5in
+\textwidth=7.5in
+\textheight=10.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\begin{document}
+
+\title{ECEN455 Lab1}
+\author{Divyansha Pandey \\ UIN : 623007531}
+\date{}
+\maketitle
+\rule{\textwidth}{1pt}
+\vspace{10pt}\\
+\textbf{\underline{\LARGE{Task 1}}} \\
+The problem  asks us to generate a sampled version of a signal and implement a CTFT function. I choose a signal composed of two tones one sine at 1kHz and other a cosine of 2kHz.\\
+
+Following figure shows the time domain signal and the computed CTFT.\\
+\centerline{\includegraphics[scale = 1]{./Task1.eps}}\\
+\vspace{10pt}\\
+%As expected the training error reduces as the number of iterations increases.\\
+%It can be seen that regression on raw data performs really good. Apart from the raw data, l2 normalized data provides better results as compared to l1.\\
+%(Implemetation in prob1.m)
+%\vspace{10pt}\\
+%\textbf{2.} The Implemetation can be found in prob2.m.\\
+%Following is the plot of error vs lambda: \\
+%\centerline{\includegraphics[scale = 1]{prob2.eps}}\\
+%\vspace{10pt}\\
+%Clearly it can be concluded that $\tau = 0.1$ works the best. Apart from that $\tau = 5$ gives good result.\\
+%As compared to \textbf{1} the performance of weighted regression is not so good. It can be improved by choosing a suitable lambda parameter.\\
+%\vspace{10pt}\\
+%\textbf{3.} The Implemetation can be found in prob3.m.\\
+%The error rate on the data set was found to be 0.1316.\\
+
+\end{document}
