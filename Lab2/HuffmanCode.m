@@ -1,4 +1,4 @@
-function [ out ] = huffman( p )
+function [ out ] = HuffmanCode( p )
 
 % Huffman Code
 
@@ -36,14 +36,17 @@ end
 code_book = [];
 [data_out, code_book] = traverse(data,code_book);
 
-out = code_book;
-% for i = 1: length(code_book)
-%     tmp(i,1) = code_book(i).alphabet;
-%     tmp(i,2) = bin2dec(code_book(i).code);
-% end
-% 
-% tmp = sortrows(tmp);
-% 
+% out = code_book;
+
+tmp = struct2cell(code_book);
+sz = size(tmp);
+
+tmp = reshape(tmp,sz(1),[]);
+tmp = tmp';
+out = sortrows(tmp,1);
+
+% sz1 = size(p);
+% p = mat2cell(p,sz1(1),sz1(2));
 % out = [p,tmp(:,2)];
 
 end

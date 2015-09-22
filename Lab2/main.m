@@ -1,7 +1,7 @@
 clc; clear; close all
 
 fh = fopen('constitution.txt');
-% file = char(fread(fh));
+
 file = fread(fh);
 fclose(fh);
 
@@ -15,8 +15,12 @@ for i = 1:N
     H = H - p(i,2)*log2(p(i,2));
 end
 
-% p=[1,1/6;2,1/6;3,1/6;4,1/6;5,1/6;6,1/6];
-
 fprintf('Entropy of the source is %f \n',H)
 
-code_book = huffman(p);
+code_book = HuffmanCode(p);
+
+avg_len = 0;
+for i = 1:length(code_book)
+    avg_len = avg_len + code_book{i,3}*length(code_book{1,2});
+end
+avg_len

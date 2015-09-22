@@ -3,6 +3,7 @@ function [node,book] = traverse( node,book )
 if isequal(node.right,0) | isequal(node.left,0)
     tmp.alphabet = node.alphabet;
     tmp.code = node.code;
+    tmp.p = node.p;
     book = [book,tmp];
     return
 else
