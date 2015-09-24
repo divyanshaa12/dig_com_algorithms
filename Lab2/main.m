@@ -20,7 +20,7 @@ fprintf('Entropy of the source is %f \n',H)
 
 avg_len = 0;
 for i = 1:length(code_book)
-    avg_len = avg_len + code_book{i,3}*length(code_book{1,2}); % average code lenght per symbol calcultion.
+    avg_len = avg_len + code_book{i,3}*length(code_book{i,2}); % average code lenght per symbol calcultion.
 end
 
 fprintf('Average length per Symbol of the huffman code is %f \n',avg_len)
