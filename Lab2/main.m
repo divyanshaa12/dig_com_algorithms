@@ -1,7 +1,6 @@
 clc; clear; close all
 
 fh = fopen('constitution.txt');
-
 file = fread(fh);
 fclose(fh);
 
@@ -17,10 +16,25 @@ end
 
 fprintf('Entropy of the source is %f \n',H)
 
-code_book = HuffmanCode(p);
+[code_book,code_tree] = HuffmanCode(p);
 
 avg_len = 0;
 for i = 1:length(code_book)
     avg_len = avg_len + code_book{i,3}*length(code_book{1,2});
 end
-avg_len
+
+fprintf('Average length of the huffman code is %f \n',avg_len)
+
+encoded_text = HuffmanEncode(file,code_book);
+
+decoded_file = HuffmanDecode(encoded_text,code_tree);
+
+if isequal(decoded_file,file)
+    fprintf('Original and the Decoded file matches \n')
+else
+    fprintf('Original and the Decoded file does not match \n')
+end
+
+fh = fopen('constitution_out.txt','w');
+file = fwrite(fh,decoded_file);
+fclose(fh);
