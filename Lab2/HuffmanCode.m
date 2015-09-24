@@ -1,4 +1,4 @@
-function [ out ] = HuffmanCode( p )
+function [ out , code_tree ] = HuffmanCode( p )
 
 % Huffman Code
 
@@ -44,6 +44,6 @@ sz = size(tmp);
 tmp = reshape(tmp,sz(1),[]);
 tmp = tmp';
 out = sortrows(tmp,1);
-
+code_tree = data_out;
 end
 
