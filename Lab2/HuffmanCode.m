@@ -45,9 +45,5 @@ tmp = reshape(tmp,sz(1),[]);
 tmp = tmp';
 out = sortrows(tmp,1);
 
-% sz1 = size(p);
-% p = mat2cell(p,sz1(1),sz1(2));
-% out = [p,tmp(:,2)];
-
 end
 
